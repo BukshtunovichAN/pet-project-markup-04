@@ -133,6 +133,9 @@ header nav {
 .hero {
     background-color: #2F303A;
     text-align: center;
+    
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .hero-title {
