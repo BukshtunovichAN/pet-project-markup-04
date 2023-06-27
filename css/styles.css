@@ -99,22 +99,11 @@ body {
     margin-left: 60px;
 }
 
-.header-address a {
-    color: var(--primary-text-color);
-    text-decoration: none;
 
-    padding-top: 32px;
-    padding-bottom: 32px; 
-}
-.header-address a:hover,
-.header-address a:focus {
-    color: var(--acent-color);
-}
-  
 .main-nav {
     display: flex;
-
     align-items: center;
+    height: 80px;
 }
 
 header nav {
@@ -129,13 +118,55 @@ header nav {
     margin-right: 50px;
 }
 
+.header-link {
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--primary-text-color);
+}
+.header-address li {
+    display: flex;
+    justify-content: center;
+
+}
+.header-address .item:hover .icon,
+.header-address .item:hover .header-link {
+    fill: var(--acent-color);
+    color: var(--acent-color);
+}
+.header-address svg {
+    margin-right: 10px;
+    fill: #757575;
+}
+
+
 /* hero */
 .hero {
-    background-color: #2F303A;
     text-align: center;
     
     padding-top: 200px;
     padding-bottom: 200px;
+}
+
+.backgroundhero {
+    min-width: 1600px;
+    min-height: 600px;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-image: 
+    linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+    url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    background-color: #2F303A;
 }
 
 .hero-title {
@@ -192,6 +223,7 @@ button.primary {
 .button.primary:focus {
     color: var(--white-text-color);
     background-color: var(--acent-color);
+    
 }
 
 
@@ -227,7 +259,7 @@ button.primary {
     line-height: 1.14;
     text-transform: uppercase;
 
-    margin-top: 0;
+    margin-top: 30px;
     margin-bottom: 0;
 }
 .feature-list p{
@@ -249,14 +281,15 @@ button.primary {
     margin-right: 0;
 }
 
-/* Our work */
-
-/* .work-list .title {
-    color: var(--title-text-color);
-
-    margin-top: 0;
-    margin-bottom: 0;
-} */
+.feauture-icon {
+    display: flex;
+    background-color: var(--bcg-button-color);
+    border-radius: 4px;
+    width: 270px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+}
 
 .work-list.list {
     display: flex;
@@ -303,8 +336,12 @@ button.primary {
     margin-top: 0px;
     margin-bottom: 0; 
 }
-
-.team-list li {
+.team-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.team-card {
     width: calc((100%-3*30px)/4);
 
     background-color: var(--white-text-color);
@@ -316,6 +353,77 @@ button.primary {
 }
 .team-list li:nth-last-child(-n + 1) {
     margin-right: 0;
+}
+
+.team-icon {
+    display: flex;
+    list-style: none;
+    margin-bottom: 30px;
+    margin-left: 32px;
+    margin-right: 32px;
+    padding: 0;
+    align-items: center;   
+}
+
+.team-icon .icon {
+    fill: #AFB1B8;
+    width: 20px;
+    height: 20px;
+}
+
+.team-icon li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.team-li:hover .icon {
+    fill: var(--white-text-color);
+}
+.team-icon li:hover, .team-icon li:focus {
+    background-color: #2196F3;
+    border-radius: 50%;
+}
+
+.team-icon li:nth-child(1) {
+    margin-right: 10px;
+}
+.team-icon li:nth-child(2) {
+    margin-right: 10px;
+}
+.team-icon li:nth-child(3) {
+    margin-right: 10px;
+}
+
+
+/* Our Clients */
+.our-clients ul{   
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 0%;
+    padding: 0%;
+}
+.our-clients li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 170px;
+    height: 92px;
+
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+
+    margin-right: 30px;
+}
+.our-clients li:hover,
+.our-clients li:focus {
+    border: 1px solid var(--acent-color);
 }
 
 /* footer */
@@ -331,6 +439,8 @@ button.primary {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+
+    margin-right: 70px;
 }
 .footer-addres a {
     display: block;
@@ -345,7 +455,6 @@ button.primary {
     font-size: 26px;
     line-height: 1.19;
     text-decoration: none;
-
 }
 
 .address .maps {
@@ -367,6 +476,58 @@ button.primary {
     text-decoration: none;
 
     margin-top: 9px;
+}
+
+.address > .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+}
+
+.social li:not(:last-child) {
+    margin-right: 10px;
+}
+.social p{
+    color: #FFF;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 700;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-top: 7px;
+}
+.footer-icons { 
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.footer-li {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FFFFFF1A;
+    border-radius: 50%;
+
+}
+.footer-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: var(--white-text-color);
+}
+.footer-li:hover {
+    background-color: var(--acent-color);
 
 }
 
@@ -408,6 +569,10 @@ button.primary {
     margin-left: 24px;
     margin-right: 24px;
 }
+.filter .button.primary:hover,
+.filter .button.primary:focus {
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+}
 .section-portfolio {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -427,7 +592,6 @@ button.primary {
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .flex-element {
@@ -436,7 +600,12 @@ button.primary {
     margin-right: 30px;
     margin-bottom: 30px;
 
-    outline: 1px solid #EEEEEE; 
+    outline: 1px solid #EEEEEE;
+}
+
+.flex-element:hover,
+.flex-element:focus {
+    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 .flex-element:nth-child(3n) {
     margin-right: 0;
@@ -444,3 +613,7 @@ button.primary {
 .flex-element:nth-last-child(-n+3) {
     margin-bottom: 0;
 }
+
+
+
+  
