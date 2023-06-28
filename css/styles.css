@@ -426,6 +426,13 @@ button.primary {
     border: 1px solid var(--acent-color);
 }
 
+.our-clients li:hover .icon {
+    fill: var(--acent-color);
+}
+.our-clients .icon {
+fill: #afb1b8;
+}
+
 /* footer */
 .address {
     background-color: #2F303A;
@@ -445,6 +452,10 @@ button.primary {
 .footer-addres a {
     display: block;
     width: 231px;
+}
+.footer-addres a:hover {
+    color: var(--acent-color);
+
 }
 
 .address .logo{
@@ -595,11 +606,15 @@ button.primary {
 }
 
 .flex-element {
+    position: relative;
+
     width: 370px;
     /* width: calc((100% - 60px)/3); */
     margin-right: 30px;
     margin-bottom: 30px;
 
+    overflow: hidden;
+    
     outline: 1px solid #EEEEEE;
 }
 
